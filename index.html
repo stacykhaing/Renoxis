@@ -1094,7 +1094,9 @@ p{margin:0;}
     </div>
     <div class="video-wrap reveal">
       <video
+        id="brandVideo"
         controls
+        muted
         preload="metadata"
         poster="media/video-poster.jpg"
         playsinline
@@ -1345,6 +1347,21 @@ if('IntersectionObserver' in window){
   revealEls.forEach(el=>io.observe(el));
 } else {
   revealEls.forEach(el=>el.classList.add('in'));
+}
+
+// Auto-play brand video when scrolled into view, pause when scrolled out
+const brandVideo = document.getElementById('brandVideo');
+if(brandVideo && 'IntersectionObserver' in window){
+  const videoIO = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        brandVideo.play().catch(()=>{});
+      } else {
+        brandVideo.pause();
+      }
+    });
+  }, {threshold:0.5});
+  videoIO.observe(brandVideo);
 }
 
 </script>
