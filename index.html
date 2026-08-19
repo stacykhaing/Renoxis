@@ -352,6 +352,28 @@ p{margin:0;}
 }
 .section-lede{font-size:16.5px; color:var(--ink-soft);}
 
+.video-section{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:100px 32px 40px;
+}
+.video-wrap{
+  max-width:900px;
+  margin:0 auto;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 24px 60px -20px rgba(10,24,48,0.35);
+  border:1px solid var(--line);
+  background:var(--navy-950);
+}
+.video-wrap video{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+  background:var(--navy-950);
+}
+
 /* dark accent sections (approach, cta) override text colors */
 .approach .section-head h2,
 .cta-band .section-head h2,
@@ -1056,6 +1078,31 @@ p{margin:0;}
           <span class="tick-label"><strong>18 yrs</strong>combined advisory experience</span>
         </span>
       </div>
+    </div>
+  </section>
+
+  <!-- BRAND VIDEO -->
+  <section class="video-section" id="watch">
+    <div class="section-head reveal">
+      <p class="eyebrow">Watch</p>
+      <h2>Growth brings complexity. We bring clarity.</h2>
+      <p class="section-lede">
+        A short look at how Renoxis works alongside founders and operators —
+        turning scattered numbers and competing priorities into a plan
+        everyone can stand behind.
+      </p>
+    </div>
+    <div class="video-wrap reveal">
+      <video
+        controls
+        preload="metadata"
+        poster="media/video-poster.jpg"
+        playsinline
+      >
+        <source src="media/renoxis-brand-story.mp4" type="video/mp4">
+        Your browser doesn't support embedded video. You can
+        <a href="media/renoxis-brand-story.mp4">download the video</a> instead.
+      </video>
     </div>
   </section>
 
